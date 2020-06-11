@@ -1,0 +1,57 @@
+<h1 class= "text-center mb-3">{{title}}</h1>
+<form action="/api/members" method="POST" class="mb-4">
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="input-form-control">
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="input-form-control">
+    <input type="submit" value="Add Member" class="btn-btn-primary btn-block">
+</div>
+</form>
+<h4>Members</h4>
+
+<ul class= "list-group">
+{{#each members}}
+    <li class="list-group-item">{{this.name}}: {{this.email}} </li>
+{{/each}}
+
+</ul>
+<br/>
+<h1>Choose a Joke</h1>
+<h2>{{randomJoke.content}}</h2>
+<p>upvotes:{{randomJoke.upvotes}}</p>
+<p>downvote:{{randomJoke.downvotes}}</p>
+<button id="savebtn" type="button" data-joke={{randomJoke.content}} data-upvotes={{randomJoke.upvotes}} data-downvotes={{randomJoke.downvotes}} class="btn btn-success">Save</button>
+<br/>
+<h1>Useres saves jokes</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Joke</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<a href="/api/members" class="btn-btn-light mt-4">Visit API</a>
