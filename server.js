@@ -5,6 +5,7 @@ const app = express();
 const logger = require('./middleware/logger');
 const members = require('./Members');
 const axios = require('axios');
+const db = require('./models');
 
 
 
@@ -49,13 +50,22 @@ return axios({
 }
 
 //home page rout
+
 app.get('/', async (req, res) => {
 var randomJoke = await getRandomJoke();
-res.render('index', {
-    title: 'Member Joke App',
-    members,
-    randomJoke
-});
+var members = await db.Member.findAll();
+    var newMembers = members.map(m => m.dataValues);
+    var savedJokes = await db.Userjoke.findAll({include: db.Member});
+    console.log(savedJokes);
+    savedJokes = savedJokes.map(sj => sj.dataValues);
+    res.render('index', {
+        title: 'Member Joke App',
+        members: newMembers,
+        savedJokes, 
+        randomJoke
+    });
+
+
 });
 
 //Members API Routes

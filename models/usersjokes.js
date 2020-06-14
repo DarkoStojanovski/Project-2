@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-    var userjoke = sequelize.define("userjoke", {
+    var Userjoke = sequelize.define("Userjoke", {
       upvotes: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: true
         
       },
       downvotes: {
@@ -13,11 +13,18 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
+      },
+      userid: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Member",
+          key: "id"
+        } 
       }
     });
   
 
   
-    return userjoke;
+    return Userjoke;
   };
   

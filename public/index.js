@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    let currentMemberId = null;
+    $(".member").on("click", function(){
+        var id = $(this).data("id");
+        currentMemberId = id;
+    })
     $("#savebtn").on("click", function(){
         alert("clicked");
        var jokeData = $(this).data("joke");
@@ -11,7 +16,9 @@ $(document).ready(function(){
        var data = {
            body: jokeData,
            upvotes: upvotes,
-           downvotes: downvotes
+           downvotes: downvotes,
+           userid: currentMemberId
+
        }
        $.ajax({
         url:"/api/jokes",
@@ -19,4 +26,5 @@ $(document).ready(function(){
         data: data
        })
     });
+
 });
