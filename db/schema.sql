@@ -7,7 +7,7 @@ CREATE TABLE members(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30),
     email VARCHAR(30),
-    status VARCHAR(10),
+    status VARCHAR(10)
 
 );
 
@@ -20,4 +20,3 @@ userid INTEGER,
 FOREIGN KEY (userid) REFERENCES members(id)
 
 );
-

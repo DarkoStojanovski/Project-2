@@ -12,13 +12,14 @@ $(document).ready(function(){
            })
     })
     $("#savebtn").on("click", function(){
-        alert("clicked");
+        alert("Your Joke IS Saved! HAHA!");
        var jokeData = $(this).data("joke");
        var upvotes = $(this).data("upvotes");
        var downvotes = $(this).data("downvotes");
 
        console.log(jokeData);
        console.log(upvotes, downvotes);
+       console.log(`Joke Saved by ${currentMemberId}`)
 
        var data = {
            body: jokeData,
