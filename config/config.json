@@ -5,17 +5,9 @@
       "database": "jokesdb",
       "host": "127.0.0.1",
       "port": 3306,
-<<<<<<< HEAD
       "dialect": "mysql",
       "define": {
         "timestamps": false
       }
-=======
-      "dialect": "mysql"
-    },
-    "production": {
-      "use_env_variable":"JAWSDB_URL",
-      "dialect": "mysql"
->>>>>>> 451547cc86008695ef03c2ce48ad76fffad27220
     }
 }

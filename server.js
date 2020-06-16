@@ -5,6 +5,7 @@ const app = express();
 const logger = require('./middleware/logger');
 const members = require('./Members');
 const axios = require('axios');
+const db = require('./models');
 
 
 
@@ -24,8 +25,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //static folder
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
 //random joke
 function getRandomJoke(){
 
@@ -49,15 +50,9 @@ return axios({
 }
 
 //home page rout
+
 app.get('/', async (req, res) => {
 var randomJoke = await getRandomJoke();
-<<<<<<< HEAD
-res.render('index', {
-    title: 'Member Joke App',
-    members,
-    randomJoke
-});
-=======
 var members = await db.Member.findAll();
     var newMembers = members.map(m => m.dataValues);
     var savedJokes = await db.Userjoke.findAll({include: { model: db.Member}});
@@ -88,7 +83,6 @@ var members = await db.Member.findAll();
     });
 
 
->>>>>>> 451547cc86008695ef03c2ce48ad76fffad27220
 });
 
 //Members API Routes
