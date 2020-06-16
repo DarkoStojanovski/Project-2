@@ -15,3 +15,8 @@ body {
 #vote {
     text-align: center;
 }
+
+.hovergroup:hover {
+    color: blue
+
+}

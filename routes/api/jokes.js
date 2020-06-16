@@ -7,6 +7,7 @@ router.post("/", (req, res) => {
     
     db.Userjoke.create(req.body).then( newJoke => {
         console.log(newJoke);
+        console.log("New Joke POSTED")
         res.status(200);   
     });
 });
@@ -16,6 +17,7 @@ router.delete("/:id",(req, res) => {
     
     db.Userjoke.destroy({where: {id: parseInt(req.params.id) }}).then( newJoke => {
         console.log(newJoke);
+        console.log("Joke Deleted")
         res.redirect("/");   
     });
 });
