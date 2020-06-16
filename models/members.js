@@ -17,10 +17,10 @@ module.exports = function(sequelize, DataTypes) {
       },
       
     });
-        Member.associate = (models) => {
-        // associations can be defined here
-        Member.hasMany(models.Userjoke, { foreignKey: 'userid', });
-    };
+    //     Member.associate = (models) => {
+    //     // associations can be defined here
+    //     Member.hasMany(models.Userjoke, { foreignKey: 'userid', });
+    // };
 
 
   

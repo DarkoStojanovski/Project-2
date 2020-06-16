@@ -51,11 +51,44 @@ return axios({
 //home page rout
 app.get('/', async (req, res) => {
 var randomJoke = await getRandomJoke();
+<<<<<<< HEAD
 res.render('index', {
     title: 'Member Joke App',
     members,
     randomJoke
 });
+=======
+var members = await db.Member.findAll();
+    var newMembers = members.map(m => m.dataValues);
+    var savedJokes = await db.Userjoke.findAll({include: { model: db.Member}});
+   
+    savedJokes = savedJokes.map(sj => {
+        // var userdata = await db.Member.findOne({
+        //     where: {id: parseInt(sj.dataValues.userid)}
+            
+        // });
+        console.log(sj.dataValues.name);
+        if (!sj)
+        return {};
+        var jokedata = {
+            ...sj.dataValues,
+            member: {
+                // ...sj?.dataValues?.Member.dataValues[0]
+            }
+           
+        }
+       return  jokedata
+    });
+    console.log(savedJokes);
+    res.render('index', {
+        title: 'Member Joke App',
+        members: newMembers,
+        savedJokes, 
+        randomJoke
+    });
+
+
+>>>>>>> 451547cc86008695ef03c2ce48ad76fffad27220
 });
 
 //Members API Routes
@@ -64,8 +97,8 @@ app.use('/api/jokes', require('./routes/api/jokes'));
 app.use('/api/members', require('./routes/api/members'));
 
 const PORT = process.env.PORT || 3000;
-
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
-
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+        console.log("App now listening on port:", PORT);
+    })
+})
