@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
     var Userjoke = sequelize.define("Userjoke", {
-      up_votes: {
+      upvotes: {
         type: DataTypes.INTEGER,
         allowNull: true
        },
    
-      down_votes: {
+      downvotes: {
         type: DataTypes.INTEGER,
         allowNull: true
       },

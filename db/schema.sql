@@ -13,9 +13,9 @@ CREATE TABLE members(
 
 CREATE TABLE userjokes(
 id INT AUTO_INCREMENT PRIMARY KEY,
-body VARCHAR (300) NOT NULL,
-up_votes INTEGER,
-down_votes INTEGER,
+body VARCHAR (200) NOT NULL,
+upvotes INTEGER,
+downvotes INTEGER,
 userid INTEGER,
 FOREIGN KEY (userid) REFERENCES members(id)
 

@@ -62,7 +62,7 @@ var members = await db.Member.findAll();
         //     where: {id: parseInt(sj.dataValues.userid)}
             
         // });
-        console.log(sj.Member.dataValues.name);
+        console.log(sj.dataValues.name);
         if (!sj)
         return {};
         var jokedata = {
@@ -95,8 +95,7 @@ db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log("App now listening on port:", PORT);
     })
-<<<<<<< HEAD
-});
-=======
 })
->>>>>>> 7d00d5a44a5b3682a577b0b64339c2cb3a3e5770
+
+
+
