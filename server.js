@@ -91,8 +91,6 @@ app.use('/api/jokes', require('./routes/api/jokes'));
 app.use('/api/members', require('./routes/api/members'));
 
 const PORT = process.env.PORT || 3000;
-
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+db.sequelize.sync().then(function() {   app.listen(PORT, function() {     console.log("App now listening on port:", PORT);   }); }); 
 
 
