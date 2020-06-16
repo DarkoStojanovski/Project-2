@@ -1,13 +1,14 @@
-<h1 class= "text-center mb-3">{{title}}</h1>
+<h1 id = "title" class= "text-center mb-3">{{title}}</h1>
 <form id="newmember" action="/api/members" method="POST" class="mb-4">
 <div class="form-group">
-    <label for="name">Name</label>
+    <label for="name">Name:</label>
     <input type="text" name="name" class="input-form-control">
 </div>
 <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">E-mail:</label>
     <input type="email" name="email" class="input-form-control">
-    <input type="submit" value="Add Member" class="btn-btn-primary btn-block">
+    <br>
+    <input type="submit" value="Add Member" class="btn btn-primary">
 </div>
 </form>
 <h4>Members</h4>
@@ -19,11 +20,13 @@
 
 </ul>
 <br/>
-<h1>Choose a Joke</h1>
+<div id ="vote">
+<h1 id="joke">Choose a Joke</h1>
 <h2>{{randomJoke.content}}</h2>
 <p>upvotes:{{randomJoke.upvotes}}</p>
 <p>downvote:{{randomJoke.downvotes}}</p>
 <button id="savebtn" type="button" data-joke="{{randomJoke.content}}" data-upvotes={{randomJoke.upvotes}} data-downvotes={{randomJoke.downvotes}} class="btn btn-success">Save</button>
+</div>
 <br/>
 <h1>Useres saves jokes</h1>
 <table class="table">

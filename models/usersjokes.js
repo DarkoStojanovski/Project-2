@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
     var Userjoke = sequelize.define("Userjoke", {
-      upvotes: {
+      up_votes: {
         type: DataTypes.INTEGER,
         allowNull: true
-        
-      },
-      downvotes: {
+       },
+   
+      down_votes: {
         type: DataTypes.INTEGER,
         allowNull: true
       },
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
           model: "Member",
           key: "id"
         } 
-      }
+      },
     });
     Userjoke.associate = (models) => {
       // associations can be defined here
