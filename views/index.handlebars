@@ -40,7 +40,8 @@
       {{#each savedJokes}}
       <tr>
           <th>{{this.id}}</th>
-          <td>{{this.body}} <button data-id={{this.id}}  class= "btn btn-danger delete" >X</button></td>
+          <td>{{this.body}} <button data-id={{this.id}}  class= "btn btn-danger delete" >
+            <i class="fa fa-frown-o" aria-hidden="true"></i> </button></td>
       </tr>
       {{/each}}
   </tbody>
