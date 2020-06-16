@@ -14,7 +14,7 @@
 
 <ul class= "list-group">
 {{#each members}}
-    <li data-id= {{this.id}} class="list-group-item member">{{this.name}}: {{this.email}} </li>
+    <li data-id= {{this.id}} class="list-group-item member">{{this.name}}: {{this.email}}</li>
 {{/each}}
 
 </ul>
@@ -37,7 +37,7 @@
       {{#each savedJokes}}
       <tr>
           <th>{{this.id}}</th>
-          <td>{{this.body}} </td>
+          <td>{{this.body}} <button data-id={{this.id}}  class= "btn btn-danger delete" >X</button></td>
       </tr>
       {{/each}}
   </tbody>

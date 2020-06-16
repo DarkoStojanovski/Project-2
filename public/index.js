@@ -4,6 +4,13 @@ $(document).ready(function(){
         var id = $(this).data("id");
         currentMemberId = id;
     })
+    $(".delete").on("click", function(){
+        var id = $(this).data("id");
+        $.ajax({
+            url:"/api/jokes/"+ id,
+            method: "Delete"
+           })
+    })
     $("#savebtn").on("click", function(){
         alert("clicked");
        var jokeData = $(this).data("joke");

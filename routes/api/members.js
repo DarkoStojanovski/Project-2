@@ -67,18 +67,26 @@ router.put('/:id', (req, res) => {
 });
 
 //delete member
-router.delete('/:id', (req, res) => {
-    const found = members.some(member => member.id === parseInt(req.params.id));
-    if(found){
-        res.json({ 
-            msg: 'member deleted', 
-            members: members.filter(member => member.id !== parseInt(req.params.id))
-    });
-    } else {
-        res.status(400).json({ msg: `No member with id of ${req.params.id}`});
-    }
+// router.delete('/:id', (req, res) => {
+//     const found = members.some(member => member.id === parseInt(req.params.id));
+//     if(found){
+//         res.json({ 
+//             msg: 'member deleted', 
+//             members: members.filter(member => member.id !== parseInt(req.params.id))
+//     });
+//     } else {
+//         res.status(400).json({ msg: `No member with id of ${req.params.id}`});
+//     }
 
     
+// });
+router.delete("/:id",(req, res) => {
+    console.log(req.body);
+    
+    db.Member.destroy({where: req.params.id}).then( newJoke => {
+        console.log(newJoke);
+        res.status(200);   
+    });
 });
 
 

@@ -55,9 +55,26 @@ app.get('/', async (req, res) => {
 var randomJoke = await getRandomJoke();
 var members = await db.Member.findAll();
     var newMembers = members.map(m => m.dataValues);
-    var savedJokes = await db.Userjoke.findAll({include: db.Member});
+    var savedJokes = await db.Userjoke.findAll({include: { model: db.Member}});
+   
+    savedJokes = savedJokes.map(sj => {
+        // var userdata = await db.Member.findOne({
+        //     where: {id: parseInt(sj.dataValues.userid)}
+            
+        // });
+        console.log(sj.dataValues.Member);
+        if (!sj)
+        return {};
+        var jokedata = {
+            ...sj.dataValues,
+            member: {
+                // ...sj?.dataValues?.Member.dataValues[0]
+            }
+           
+        }
+       return  jokedata
+    });
     console.log(savedJokes);
-    savedJokes = savedJokes.map(sj => sj.dataValues);
     res.render('index', {
         title: 'Member Joke App',
         members: newMembers,

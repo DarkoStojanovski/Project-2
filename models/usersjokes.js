@@ -22,6 +22,11 @@ module.exports = function(sequelize, DataTypes) {
         } 
       }
     });
+    Userjoke.associate = (models) => {
+      // associations can be defined here
+    Userjoke.belongsTo(models.Member, { foreignKey: 'userid', });
+  };
+
   
 
   

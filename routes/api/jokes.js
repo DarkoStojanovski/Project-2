@@ -11,5 +11,12 @@ router.post("/", (req, res) => {
     });
 });
 
-
+router.delete("/:id",(req, res) => {
+    console.log(req.body);
+    
+    db.Userjoke.destroy({where: {id: parseInt(req.params.id) }}).then( newJoke => {
+        console.log(newJoke);
+        res.redirect("/");   
+    });
+});
 module.exports = router;
