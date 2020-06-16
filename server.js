@@ -93,7 +93,7 @@ app.use('/api/members', require('./routes/api/members'));
 const PORT = process.env.PORT || 3000;
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
-        console.log("App now listening on port:", PORT);
+        console.log("Joke Stasher is now listening on port:", PORT);
     })
 })
 
