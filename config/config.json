@@ -1,10 +1,13 @@
 {
     "development": {
       "username": "root",
-      "password": "Novabeba@2020",
+      "password": "a12345678",
       "database": "jokesdb",
       "host": "127.0.0.1",
       "port": 3306,
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "define": {
+        "timestamps": false
+      }
     }
 }

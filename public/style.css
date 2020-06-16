@@ -1,4 +1,10 @@
 body {
-    background: #333;
-    color: #fff;
+    background-color:beige;
+}
+#title{
+   font-size: 100px;
+    color: crimson;
+} 
+#newmember {
+    text-align: center;
 }
