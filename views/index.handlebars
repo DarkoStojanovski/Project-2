@@ -20,11 +20,13 @@
 
 </ul>
 <br/>
-<h1>Choose a Joke</h1>
+<div id ="vote">
+<h1 id="joke">Choose a Joke</h1>
 <h2>{{randomJoke.content}}</h2>
 <p>upvotes:{{randomJoke.upvotes}}</p>
 <p>downvote:{{randomJoke.downvotes}}</p>
 <button id="savebtn" type="button" data-joke="{{randomJoke.content}}" data-upvotes={{randomJoke.upvotes}} data-downvotes={{randomJoke.downvotes}} class="btn btn-success">Save</button>
+</div>
 <br/>
 <h1>Useres saves jokes</h1>
 <table class="table">
