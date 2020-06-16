@@ -62,7 +62,7 @@ var members = await db.Member.findAll();
         //     where: {id: parseInt(sj.dataValues.userid)}
             
         // });
-        console.log(sj.dataValues.Member);
+        console.log(sj.dataValues.name);
         if (!sj)
         return {};
         var jokedata = {
