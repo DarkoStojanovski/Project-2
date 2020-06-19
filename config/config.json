@@ -1,14 +1,25 @@
 {
   "development": {
     "username": "root",
-    "password": "six4teen",
+    "password": "Novabeba@2020",
     "database": "jokesdb",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql",
     "define": {
       "timestamps": false 
+    },
+    "production": {
+      "use_env_variable":"JAWSDB_URL",
+      "dialect": "mysql"
     }
-
-  }
 }
+}
+  
+
+    
+
+
+
+
+  
