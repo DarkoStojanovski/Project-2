@@ -15,7 +15,12 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true,
         
       },
-      
+      id: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        autoIncrement: true,
+        primaryKey: true
+      }
     });
     //     Member.associate = (models) => {
     //     // associations can be defined here
