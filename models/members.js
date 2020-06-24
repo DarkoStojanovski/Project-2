@@ -22,10 +22,10 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true
       }
     });
-    //     Member.associate = (models) => {
-    //     // associations can be defined here
-    //     Member.hasMany(models.Userjoke, { foreignKey: 'userid', });
-    // };
+        Member.associate = (models) => {
+        // associations can be defined here
+        Member.hasMany(models.Userjoke, { foreignKey: 'userid', });
+    };
 
 
   
