@@ -17,14 +17,15 @@ module.exports = function(sequelize, DataTypes) {
       userid: {
         type: DataTypes.INTEGER,
         references: {
-          model: "Member",
+          model: "Members",
           key: "id"
         } 
       },
     });
     Userjoke.associate = (models) => {
       // associations can be defined here
-    Userjoke.belongsTo(models.Member, { foreignKey: 'userid', });
+    // Userjoke.belongsTo(models.Member, { foreignKey: 'userid', });
+    Userjoke.belongsTo(models.Member, { as: "Members",forignKey: 'userid' });
   };
 
   
