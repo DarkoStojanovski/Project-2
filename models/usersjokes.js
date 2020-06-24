@@ -14,13 +14,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       },
-      // userid: {
-      //   type: DataTypes.INTEGER,
-      //   references: {
-      //     model: "Members",
-      //     key: "id"
-      //   } 
-      // },
+      userid: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Member",
+          key: "id"
+        } 
+      },
     });
     Userjoke.associate = (models) => {
       // associations can be defined here
